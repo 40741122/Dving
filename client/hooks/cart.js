@@ -96,7 +96,6 @@ export const CartProvider = ({
     if (!item.product_id && !item.lesson_id) return
     // 更新項目
     const updateItem = { ...item, num }
-    console.log(updateItem)
     setCartItems(updateOne(cartItems, updateItem))
   }
   /**

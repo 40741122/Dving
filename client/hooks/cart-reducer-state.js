@@ -45,7 +45,8 @@ export const findOneById = (items, id, detail, isProduct) => {
         )
       } else {
         return (
-          String(item.lesson_id) === String(id) && item.order_time === detail
+          String(item.lesson_id) === String(id) &&
+          item.order_time + ' ' + item.timedetail === detail
         )
       }
     }) || {}
@@ -59,7 +60,7 @@ export const updateOne = (items, updateItem) => {
     // if(item.product_id){
 
     // }
-    console.log(updateItem)
+    // console.log(updateItem)
     if (
       item.product_id &&
       String(item.product_id) === String(updateItem.product_id) &&
@@ -89,7 +90,7 @@ export const incrementOne = (items, id, detail, isProduct) => {
     } else if (
       !isProduct &&
       String(item.lesson_id) === String(id) &&
-      item.order_time === detail
+      item.order_time + ' ' + item.timedetail === detail
     ) {
       return { ...item, num: item.num + 1 }
     } else return item
@@ -112,7 +113,7 @@ export const decrementOne = (items, id, detail, isProduct) => {
     } else if (
       !isProduct &&
       String(item.lesson_id) === String(id) &&
-      item.order_time === detail
+      item.order_time + ' ' + item.timedetail === detail
     ) {
       return {
         ...item,
